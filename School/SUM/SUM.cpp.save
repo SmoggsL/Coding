@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main()
+{
+    //freopen("SUM.INP","r",stdin);
+    //freopen("SUM.OUT","w",stdout);
+    //ios_base::sync_with_stdio(false);
+    //cin.tie(0); cout.tie(0);
+    int n1,n2,tong;
+    cin >> n1 >> n2;
+    while(n1%10!=0)
+    {
+        tong+=n1%10+n1/10;
+        n1++;
+    }
+    while(n2%9!=0)
+    {
+        tong+=n2%10+n2/10;
+        n2--;
+    }
+    dequy();
+    return 0;
+}
