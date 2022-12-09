@@ -7,30 +7,28 @@ ll d,n,t;
 ll a[maxn];
 
 int main() {
-    //freopen(".INP","r",stdin);
-    //freopen(".OUT","w",stdout);
+    //freopen("main.INP","r",stdin);
+    //freopen("main.OUT","w",stdout);
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
     cin >> t;
     while(t--)
     {
         cin >> d >> n;
-        ll temp,pain = 0,cnt = 0;
-        for (int i = 1; i <= n; i++)
+        ll b,cnt = 0;
+        ll temp = 0;
+        memset(a,0,sizeof(a));
+        a[0] = 1;
+        for (ll i = 1; i <= n; i++)
         {
-            cin >> temp;
-            pain += temp;
-            if (pain%d == 0)
-            {
-                cnt++;
-                pain = 0;
-                continue;
-            } 
-            if (pain > d)
-            {
-                pain = 0;
-                continue;
-            }
+            cin >> b;
+            temp = (temp%d + b%d)%d;
+            //cout << temp << endl;
+            a[temp]++;
+        }
+        for (ll i = 0; i < d; i++)
+        {
+            cnt = cnt + a[i]*(a[i] - 1)/2;
         }
         cout << cnt << "\n";
     }
