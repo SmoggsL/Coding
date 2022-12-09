@@ -4,7 +4,7 @@ using namespace std;
 const ll mod = 1e9+7;
 const ll maxn = 1e9;
 ll n,t;
-vector<ll> a;
+vector<char> a;
 
 int main() {
     //freopen(".INP","r",stdin);
@@ -17,23 +17,20 @@ int main() {
         cin >> n;
         while(n%2 == 0)
         {
-            a.push_back(2);
+            a.push_back('2');
+            a.push_back('*');
             n = n/2;
         }
         for (ll i = 3; i <= sqrt(n); i++)
         {
             while(n%i == 0)
             {
-                a.push_back(i);
+                a.push_back('i');
+                a.push_back('*');
                 n = n/i;
             }
         }
-        for (int i = 0; i < a.size(); i++)
-        {
-            cout << a[i];
-            if (i < a.size()-1) cout << "*";
-        }
-        if (n>2) cout << n << " ";
+        if (n>2) cout << "*" << n << " ";
         cout << "\n";
         a.clear();
     }
