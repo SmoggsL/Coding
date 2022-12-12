@@ -3,6 +3,7 @@ using namespace std;
 #define ll long long
 const ll mod = 1e9+7;
 const ll maxn = 1e9;
+
 int n,m;
 int a[105];
 vector<int> w;
