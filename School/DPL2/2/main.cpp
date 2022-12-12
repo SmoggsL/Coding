@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 const ll mod = 1e9+7;
-const ll maxn = 5*1e4+5;
+const ll maxn = 1e6+5;
 ll d,n,t;
 ll a[maxn];
 
