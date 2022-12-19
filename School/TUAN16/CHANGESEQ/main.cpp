@@ -27,7 +27,7 @@ int main() {
             {
                 if (c[i-1] != 0)
                 {
-                    if (c[i] != c[i-1])
+                    if (c[i] != c[i-1] && c[i+1] != c[i])
                     {
                         cout << "NO" << "\n";
                         flag = false;
