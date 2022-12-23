@@ -13,17 +13,21 @@ bool check(string s)
 }
 
 int main() {
-    //freopen(".INP","r",stdin);
-    //freopen(".OUT","w",stdout);
+    freopen("main.INP","r",stdin);
+    freopen("main.OUT","w",stdout);
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
-    cin >> l >> r;
-    ll cnt = 0;
-    for (ll i = l; i <= r; i++)
+    // cin >> l >> r;
+    // ll cnt = 0;
+    // for (ll i = l; i <= r; i++)
+    // {
+    //     string s = to_string(i);
+    //     if (check(s)) cnt++;
+    // }
+    // cout << cnt;
+    for (int i = 1; i <= maxn; i++)
     {
-        string s = to_string(i);
-        if (check(s)) cnt++;
+        cout << i << endl;
     }
-    cout << cnt;
     return 0;
 }

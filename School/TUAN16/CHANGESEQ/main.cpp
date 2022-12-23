@@ -23,18 +23,6 @@ int main() {
         for (int i = 1; i <= n; i++)
         {
             c[i] = abs(b[i] - a[i]);
-            if(i >=2 )
-            {
-                if (c[i-1] != 0)
-                {
-                    if (c[i] != c[i-1] && c[i+1] != c[i])
-                    {
-                        cout << "NO" << "\n";
-                        flag = false;
-                        break;
-                    }
-                }
-            }
         }
 
         if (flag) cout << "TRUE" << "\n";
