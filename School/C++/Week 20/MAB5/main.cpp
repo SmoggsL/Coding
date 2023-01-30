@@ -2,14 +2,49 @@
 using namespace std;
 #define ll long long
 const ll mod = 1e9+7;
-const ll maxn = 1e9;
+const ll maxn = 1e7+5;
+ll l,r;
+ll sol[maxn];
 
+bool primecheck(ll n)
+{
+    if(n <= 1) return 0;
+    if(n <=3 ) return 1;
+    if(n%2 == 0 || n%3 == 0) return 0;
+    for (int i = 5; i*i <= n; i+= 6)
+    {
+        if (n% i == 0 || n%(i+2)) return 0;
+    }
+    return 1;
+}
 
 int main() {
     //freopen(".INP","r",stdin);
-    //freopen(".OUT","w",stdout);
+    //freopen("main.OUT","w",stdout);
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
+
+    cin >> l >> r;
     
+    ll sum = 0;
+    sol[0] = 0;
+    
+    for (int i = 1;i <= maxn - 5; i++)
+    {
+            int temp = i;
+            sum = 0;
+            while (temp > 0)
+            {
+                sum += temp%10;
+                temp /= 10;
+                if (primecheck(sum) == 1) sol[i] = 1;
+                else sol[i] = 0;
+            }
+            
+    }
+    for (int i = 1; i <= maxn - 5; i++) sol[i] += sol[i-1];
+    //for (int i = 0; i <= maxn - 5; i++) cout << sol[i] << " ";
+    cout << sol[r] - sol[l-1];
+
     return 0;
 }
