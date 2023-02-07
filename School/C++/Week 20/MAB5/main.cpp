@@ -13,7 +13,7 @@ bool primecheck(ll n)
     if(n%2 == 0 || n%3 == 0) return 0;
     for (int i = 5; i*i <= n; i+= 6)
     {
-        if (n% i == 0 || n%(i+2)) return 0;
+        if (n% i == 0 || n%(i+2)==0) return 0;
     }
     return 1;
 }
@@ -27,24 +27,21 @@ int main() {
     cin >> l >> r;
     
     ll sum = 0;
-    sol[0] = 0;
+    ll cnt = 0;
     
-    for (int i = 1;i <= maxn - 5; i++)
+    for (int i = l;i <= r; i++)
     {
-            int temp = i;
+            ll temp = i;
             sum = 0;
             while (temp > 0)
             {
-                sum += temp%10;
-                temp /= 10;
-                if (primecheck(sum) == 1) sol[i] = 1;
-                else sol[i] = 0;
+                sum = sum + temp%10;
+                temp = temp/ 10;
             }
+            if (primecheck(sum) == 1) cnt++;
             
-    }
-    for (int i = 1; i <= maxn - 5; i++) sol[i] += sol[i-1];
-    //for (int i = 0; i <= maxn - 5; i++) cout << sol[i] << " ";
-    cout << sol[r] - sol[l-1];
+    }  
+    cout << cnt;
 
     return 0;
 }
