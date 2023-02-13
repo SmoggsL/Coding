@@ -34,8 +34,8 @@ void sol(int x)
 }
 
 int main() {
-    freopen("HOANVI.INP","r",stdin);
-    freopen("HOANVI.OUT","w",stdout);
+    //freopen("HOANVI.INP","r",stdin);
+    //freopen("HOANVI.OUT","w",stdout);
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
     cin >> n;

@@ -13,7 +13,7 @@ void writeAr(int a[],int n)
     }
     cout << "\n";
 }
-void test(int x)
+void sol(int x)
 {
     for (int i = 0; i <= 1; i++)
     {
@@ -22,7 +22,7 @@ void test(int x)
         {
             writeAr(a,n);
         }
-        else test(x+1);
+        else sol(x+1);
     }
 }
 
@@ -32,6 +32,6 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
     cin >> n;
-    test(1);
+    sol(1);
     return 0;
 }
