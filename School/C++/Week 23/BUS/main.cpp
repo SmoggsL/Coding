@@ -6,21 +6,36 @@ const ll maxn = 1e5;
 int n,m,a,b;
 
 int main() {
-    freopen("main.INP","r",stdin);
-    freopen("main.OUT","w",stdout);
+    // freopen("main.INP","r",stdin);
+    // freopen("main.OUT","w",stdout);
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
     cin >> n >> m >> a >> b;
-    ll money = n*a;
-    for (int i = 1; i <= maxn; i++)
+    ll ans;
+    if (m == 0)
     {
-        if (m*i >= n)
-        {
-            ll temp = b*i;
-            money = min(money,temp);
-            break;
-        }
+        cout << n*a;
     }
-    cout << money;
+    else if (n < m)
+    {
+        ans = min (n*a,b);
+        cout << ans;
+    }
+    else
+    {
+        ll temp = n/m;
+        ll ticket1 = n*a, ticket2 = temp*b;
+        ans = min(ticket1,ticket2);
+        ll mod = n%m;
+        if (mod > 0)
+        {
+            ticket1 = mod*a;
+            ticket2 = b;
+            ll temp2 = min(ticket1,ticket2);
+            ans += temp2;
+        }
+        cout << ans;
+
+    }
     return 0;
 }
