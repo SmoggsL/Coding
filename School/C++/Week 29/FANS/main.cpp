@@ -15,7 +15,11 @@ bool pointcompare(fans a, fans b)
 {
     return a.points > b.points;
 }
-
+bool namecompare(fans a, fans b)
+{
+    if (a.points == b.points) return a.name < b.name;
+    return a.points > b.points;
+}
 int main() {
     // freopen(".INP","r",stdin);
     // freopen(".OUT","w",stdout);
@@ -29,6 +33,7 @@ int main() {
         cin >> a[i].name >> a[i].points;
     }
     sort(a,a+n,pointcompare);
+    sort(a,a+n,namecompare);
     for (int i = 0; i < t; i++)
     {
         cout << a[i].name << "\n";
