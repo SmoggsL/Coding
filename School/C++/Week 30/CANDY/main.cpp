@@ -12,18 +12,24 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
     ll n,m; cin >> n >> m;
-    vector<ll> a(n);
-    pair<ll,ll> big;
+    vector< pair <ll,ll> > a(n);
     for (int i = 1; i <= n; i++)
     {
-        cin >> a[i];
+        a[i].first = i;
+        cin >> a[i].second;
     }
     while(a.size() > 0)
     {
-        for (auto i : a)
+        
+        for (int i = 1; i <= n; i++)
         {
-            if (i < m) 
+            if (a[i].second <= m) a.erase(a.begin() + i);
+            else
+            {
+                a[i].second = a[i].second - m;
+            }
         }
+        n = a.size();
     }
     return 0;
 }
