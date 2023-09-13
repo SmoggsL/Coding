@@ -21,6 +21,28 @@ int sum_array(ll *p,ll n)
     return sum;
 }
 
+struct Node{
+    int value;
+    Node *next;
+};
+
+struct List{
+    Node *head,*tail;
+};
+List *init()
+{
+    List *p = new List;
+    p->head = nullptr;
+    p->tail = nullptr;
+}
+void append_value(List *l, int value)
+{
+    // if(!tail)
+    {
+
+    }
+}
+
 int main() {
     // freopen("main.INP","r",stdin);
     // freopen("main.OUT","w",stdout);
@@ -32,8 +54,8 @@ int main() {
     {
        cin >> a[i];
     }
-    cout << sum_array(a,n);
-    // f(&n);
+    // cout << sum_array(a,n);
+    // f(&n);`
     // cout << S
     return 0;
 }
