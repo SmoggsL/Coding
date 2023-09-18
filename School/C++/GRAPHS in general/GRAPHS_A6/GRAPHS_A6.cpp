@@ -11,8 +11,10 @@ int main() {
     // freopen(".OUT","w",stdout);
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
+
     ll n; cin >> n;
     vector<int> b[n+2];
+    
     cin.ignore();
     for (int i = 1; i <= n; i++)
     {
@@ -21,6 +23,7 @@ int main() {
         stringstream bruv(bruh);
         int x;
         while (bruv >> x) b[i].push_back(x);
+    
     }
     for (int i = 1; i <= n; i++)
     {
