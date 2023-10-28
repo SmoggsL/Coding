@@ -10,20 +10,19 @@ class Solution {
 public:
     bool isValid(string s) {
         stack <char> st;
-        vector<pair<char,char>> v = {{'(',')'},{'{','}'},{'[',']'}};
-        for (char c : s)
+        vector<pair<char,char>> v = { {')', '('}, {']', '['}, {'}', '{'} };
+        for (auto c : s)
         {
             if (c == '(' || c == '{' || c == '[') st.push(c);
             else{
                 if (st.empty()) return false;
                 for (auto p : v)
                 {
-                    if (st.top() == p.first && c == p.second) return false;
-
+                    if (c == p.first && st.top() != p.second) return false;
                 }
                 st.pop();
             }
         }
-        return (!st.empty());
+        return (st.empty());
     }
 };

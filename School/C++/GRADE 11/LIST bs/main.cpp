@@ -5,22 +5,6 @@ const ll mod = 1e9+7;
 const ll maxn = 1e9;
 int n;
 
-void f(int *p)
-{
-    *p = *p**p;
-    (*p)++; 
-}
-
-int sum_array(ll *p,ll n)
-{
-    ll sum = 0;
-    for (int i = 0; i < n; i++)
-    {
-       sum += p[i];
-    }
-    return sum;
-}
-
 struct Node{
     int value;
     Node *next, *prev;
