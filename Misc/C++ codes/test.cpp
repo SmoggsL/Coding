@@ -5,8 +5,6 @@ const ll mod = 1e9+7;
 const ll maxn = 1e9;
 int n;
 
-
-
 int main() {
     // freopen("main.INP","r",stdin);
     // freopen("main.OUT","w",stdout);
