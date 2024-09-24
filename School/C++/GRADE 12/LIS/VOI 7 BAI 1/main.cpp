@@ -3,9 +3,10 @@ using namespace std;
 #define ll long long
 #define sp ' '
 const ll mod = 1e9+7;
-const ll maxn = 1e8+1;
+const ll maxn = 1e7+1;
 
 ll filt[maxn];
+int a[maxn];
 void ufilter()
 {
     filt[1] = 1;
@@ -22,24 +23,32 @@ int main() {
     cin.tie(0); cout.tie(0);
 
     int n; cin >> n;
-    int a[n+5], dp[n+6];
-    for (int i = 0; i < n; i++) cin >> a[i];
     
-    dp[1] = a[0];
-    int k = 1;
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++) cin >> a[i];
+    ufilter();
+    ll ans = 0;
+    for(int i = 0; i < n-1; i++)
     {
-        if(a[i]>dp[k])
+        if (!binary_search(filt,filt+maxn,a[i])) continue;
+        ll temp = 1;
+        for (int j = i+1; j < n; j++)
         {
-            k++;
-            dp[k] = a[i];
-        }
-        else
-        {
-            int id = lower_bound(dp+1,dp+k+1, a[i]) -dp;
-            dp[id] = a[i];
+            if (!binary_search(filt,filt+maxn,a[j]))
+            {
+                ans = max(ans,temp);
+                i = j;
+                break;
+            }
+            if (a[j] >= a[j-1]) temp++;
+            else
+            {
+                ans = max(ans,temp);
+                i = j;
+                break;
+            }
         }
     }
-    cout << k;
+    cout << ans;
+
     return 0;
 }
