@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Nhập Form</title>
 </head>
 <body>
-    <h1>this is a message form</h1>
-    <form action="">
-        
-    </form>
+  <h1>Nhập tin nhắn mới</h1>
+  <form action="/message" method="POST">
+    <label for="message">Tin nhắn:</label>
+    <input type="text" id="message" name="message" required>
+    <button type="submit">Gửi</button>
+  </form>
+  <br>
+  <!-- <a href="/">Quay lại danh sách tin nhắn</a> -->
 </body>
 </html>

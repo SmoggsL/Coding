@@ -1,2 +1,3 @@
 const server = require('server');
-server(ctx => 'Yhaloo daiojadid');
+server(ctx => 'pain');
+// console.log("pain");
